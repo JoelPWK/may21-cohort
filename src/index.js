@@ -3,10 +3,13 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import SplashPage from './splashPage.js';
 
 ReactDOM.render(
   <React.StrictMode>
     <App />
+    
+    <SplashPage />
   </React.StrictMode>,
   document.getElementById('root')
 );
