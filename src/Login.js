@@ -1,5 +1,6 @@
 import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
@@ -7,8 +8,8 @@ import Card from 'react-bootstrap/Card';
 
 function Login() {
     return (
-        <Container>
-            <div className="d-flex justify-content-center">
+        <Container className="Login" >
+            <div className="container-fluid h-100 d-flex align-items-center">
                 <Card>
                     <Card.Title className="mt-3 mb-3 ms-1 me-1">Enter your email address and password below:</Card.Title>
                     <Form>
