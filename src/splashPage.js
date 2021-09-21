@@ -11,7 +11,7 @@ class SplashPage extends React.Component {
     
     render(){
         return(            
-        <div>      
+        <div className={"main-text"}>      
             <h1>Welcome to StopStopGo!</h1>
             <p>Through the input of users like you, 
                 this service is always improving and 
