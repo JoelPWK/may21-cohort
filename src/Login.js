@@ -24,7 +24,7 @@ function Login() {
               className="mb-3 ms-1 me-1"
               controlId="formBasicPassword"
             >
-              <Form.Label>Password</Form.Label>
+              <Form.Label>Password:</Form.Label>
               <Form.Control type="password" placeholder="Password" />
             </Form.Group>
             <div className="text-center">
