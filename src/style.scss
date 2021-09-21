@@ -1,17 +1,20 @@
 $background: rgb(224,222,203);
 
 body {
-    padding: 8px;
-    margin: 8px;
+    padding: 0px;
+    margin: 0px;
     background-color: white;
 }
 
+h1 {
+    font-size: 20px;
+}
 .main-text {
     font-size: 16px;
     color: rgb(31,32,65);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: justify;
-    line-height: 20px;
+    line-height: 24px;
     background: rgb(224,222,203);
 }
 
