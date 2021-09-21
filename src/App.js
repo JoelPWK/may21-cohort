@@ -2,6 +2,7 @@ import logo from './logo.svg';
 import SplashPage from './splashPage.js';
 import './App.css';
 import React from "react";
+import './style.scss';
 
 class App extends React.Component {
   constructor(props){

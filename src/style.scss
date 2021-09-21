@@ -6,10 +6,14 @@ body {
     background-color: white;
 }
 
-text {
+.main-text {
     font-size: 16px;
     color: rgb(31,32,65);
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     text-align: justify;
     line-height: 20px;
+}
+
+navbar {
+    background: rgb(31,32,65);
 }
