@@ -1,25 +1,35 @@
 import logo from './logo.svg';
+import SplashPage from './splashPage.js';
 import './App.css';
+import React from "react";
+import './style.scss';
 
-function App() {
-  return (
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+        isHidden: true
+    }
+  }
+  
+  toggleHidden(){
+    this.setState({
+        isHidden: !this.state.isHidden
+    })
+  }
+
+  splashTimer(){
+
+  }
+  
+  render(){
+    return(
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      { this.state.isHidden ? <SplashPage /> : null }
+      <button onClick={this.toggleHidden.bind(this)}>Hide/Show</button>  
     </div>
-  );
+    )
+  }
 }
 
 export default App;
