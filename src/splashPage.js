@@ -5,13 +5,14 @@ class SplashPage extends React.Component {
     constructor(props){
         super(props)
     this.state = {
-        isHidden: false
+        isHidden: true
     }
   }
     
     render(){
         return(            
         <div className={"main-text"}>      
+            <p> </p>
             <h2>Welcome to StopStopGo!</h2>
             <p>Through the input of users like you, 
                 this service is always improving and 
@@ -21,7 +22,7 @@ class SplashPage extends React.Component {
                 enjoy our full services.</p>
             <button onClick={() => {return false} }>Register</button><br/>
             <p>If you already a member, you may log in below:</p>
-            <button onClick={() => {return false} }>Log In</button><br/>
+            <button onClick={() => {return false} }>Log In</button><br/><p> </p>
             
         </div>
         )
