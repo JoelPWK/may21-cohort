@@ -4,7 +4,6 @@ import React, { useState, Component } from 'react';
 import RouterPage from "./router";
 import './style.scss';
 
-
 class App extends React.Component {
   constructor(props){
     super(props)
