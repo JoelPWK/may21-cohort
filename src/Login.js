@@ -9,9 +9,12 @@ import Card from "react-bootstrap/Card";
 export class Login extends Component {
 
   OnLogin(event) {
+    event.preventDefault();
     //collect form inputs - email, password
     var email = event.target.email.value;
     var password = event.target.password.value;
+    console.log(email);
+    console.log(password);
 
     //check details with database
   }
