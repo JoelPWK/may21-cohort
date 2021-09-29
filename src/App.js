@@ -4,8 +4,8 @@ import React from "react";
 import './style.scss';
 import Home from "./home.js"
 import Nav from "./nav.js"
-import Login from "./login.js"
-import Register from "./register.js"
+import Login from "./Login.js"
+import Register from "./Register.js"
 import Search from "./search.js"
 import Profile from "./profile.js"
 import Report from "./report.js"
@@ -33,8 +33,9 @@ class App extends React.Component {
     return(
       <div className="App">
     <Router>
-      <Switch>
       <Nav />
+      <Switch>
+      
         <Route path="/home" >     <Home />      </Route>
         <Route path="/login" >    <Login />     </Route>
         <Route path="/register">  <Register/>   </Route>
