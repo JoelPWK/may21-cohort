@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import App from "./App.js"
 import Nav from "./nav.js"
 import Home from "./home.js"
 import Login from "./login.js"
@@ -10,6 +11,7 @@ import {BrowserRouter as Router, Switch, Route} from "react-router-dom"
 
 class RouterPage extends Component {
     render(){
+
         return(
           <div>
             <Router>

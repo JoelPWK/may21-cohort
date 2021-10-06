@@ -3,6 +3,8 @@ import './App.css';
 import React, { useState, Component } from 'react';
 import RouterPage from "./router";
 import './style.scss';
+import {useEffect} from "react";
+import Login from "./login.js";
 
 class App extends React.Component {
   constructor(props){
@@ -25,12 +27,14 @@ class App extends React.Component {
       })
   }
 
-
-  async splashTimer(){
-
+  splashTimer(){
+    if (Login.isLoggedIn == false){
+      setTimeout(this.toggleHidden, 3000)
+    }
   }
   
   render(){
+    this.splashTimer();
     return(
       <div>
         <div className="container">
