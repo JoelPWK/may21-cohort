@@ -14,8 +14,9 @@ class Search extends React.Component {
     constructor(props){
         super(props)
         this.state = {
-            displayHour: "00",
-            displayMinute: "00"
+            displayHour: "Hour",
+            displayMinute: "Minute"
+        // For some reason, this doesn't work. 
         }
     }
     
@@ -43,7 +44,8 @@ class Search extends React.Component {
                         className="d-inline" 
                         title={this.displayHour ? this.displayHour : "Hour"}
                         onSelect={(e) => {
-                                console.log(typeof(e)); 
+                                console.log(typeof(e),e); 
+                                console.log(this.displayHour);
                                 this.setState({
                                     displayHour: e
                                 })
