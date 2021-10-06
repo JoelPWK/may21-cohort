@@ -42,14 +42,11 @@ class Search extends React.Component {
                 </Row>
                     <DropdownButton 
                         className="d-inline" 
-                        title={this.displayHour ? this.displayHour : "Hour"}
+                        title={this.state.displayHour ? this.state.displayHour : "Hour"}
                         onSelect={(e) => {
-                                console.log(typeof(e),e); 
-                                console.log(this.displayHour);
                                 this.setState({
                                     displayHour: e
                                 })
-                                console.log(this.displayHour)
                             }}>
                         
                         {["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"].map(
@@ -66,7 +63,12 @@ class Search extends React.Component {
                     </DropdownButton>   
                     <DropdownButton 
                         className="d-inline" 
-                        title={this.displayMinute ? this.displayMinute : "Minute"}>
+                        title={this.state.displayMinute ? this.state.displayMinute : "Minute"}
+                        onSelect={(e) => {
+                            this.setState({
+                                displayMinute: e
+                            })
+                        }}>
                         {["00","05","10","15","20","25","30","35","40","45","50","55"].map(
                             (minute) => {
                                 return (
