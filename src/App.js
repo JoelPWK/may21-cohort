@@ -1,9 +1,8 @@
 import SplashPage from './splashPage.js';
 import './App.css';
-import React, { useState, Component } from 'react';
+import React, { useState, Component, useEffect } from 'react';
 import RouterPage from "./router";
 import './style.scss';
-import {useEffect} from "react";
 import Login from "./login.js";
 
 class App extends React.Component {
