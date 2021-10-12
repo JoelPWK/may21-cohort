@@ -1,3 +1,18 @@
+.Login,
+.Register {
+  height: 100vh;
+  background-color: #4b3f72;
+}
+
+#registerCard, #loginCard {
+  background-color: #e9d2c0;
+}
+
+#submitButton, #loginButton {
+  background-color: #417b5a;
+  border-color: #417b5a;
+}
+
 .App {
   text-align: center;
 }

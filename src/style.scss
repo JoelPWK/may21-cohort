@@ -1,0 +1,39 @@
+$text-decoration: none;
+$background-color: rbg(224,222,203);
+
+body {
+    background-color: rbg(224,222,203);
+}
+
+h1 {
+    font-size: 20px;
+}
+.main-text {
+    font-size: 16px;
+    color: rgb(31,32,65);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-align: justify;
+    line-height: 24px;
+    background: rgb(224, 222, 203);
+}
+
+.container {
+    
+}
+
+.nav {
+    background: rgb(131, 115, 94);
+    list-style: none;
+    height: 6vh;
+    line-height: 20px;
+    align-content: initial;
+}
+
+.nav_image {
+    height: 4vh;
+    width: 4vh;
+    margin: 8px;
+    align-self: initial;
+    justify-items: initial;
+    text-decoration: none;
+}

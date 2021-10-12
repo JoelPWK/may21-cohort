@@ -1,25 +1,47 @@
-import logo from './logo.svg';
+import SplashPage from './splashPage.js';
 import './App.css';
+import React, { useState, Component } from 'react';
+import RouterPage from "./router";
+import './style.scss';
+import {useEffect} from "react";
+import Login from "./login.js";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+        isHidden: true
+    }
+  }
+  
+  toggleHidden(){
+    this.setState({
+        isHidden: !this.state.isHidden
+    })
+  }
+
+  handleChange = (data) => {
+    console.log(data);
+      this.setState({
+        isHidden: data
+      })
+  }
+
+  splashTimer(){
+    if (Login.isLoggedIn == false){
+      setTimeout(this.toggleHidden, 3000)
+    }
+  }
+  
+  render(){
+    this.splashTimer();
+    return(
+      <div>
+        <div className="container">
+          { this.state.isHidden ? <SplashPage closeSplash={(e)=>{ this.handleChange(e) }}/> : <RouterPage/>}
+        </div>
+      </div>
+    )
+  }
 }
-
 export default App;
