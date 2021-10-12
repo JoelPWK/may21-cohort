@@ -1,5 +1,4 @@
 import SplashPage from './splashPage.js';
-import './App.css';
 import React from "react";
 import './style.scss';
 import Home from "./home.js"

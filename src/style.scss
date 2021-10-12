@@ -1,5 +1,21 @@
 $background: rgb(224,222,203);
 
+.Login,
+.Register,
+.Dashboard {
+  height: 100vh;
+  background-color: #4b3f72;
+}
+
+#registerCard, #loginCard, #dashboardOptions {
+  background-color: #e9d2c0;
+}
+
+#submitButton, #loginButton, #myJourneysButton, #makeAReportButton {
+  background-color: #417b5a;
+  border-color: #417b5a;
+}
+
 body {
     padding: 0px;
     margin: 8px;
