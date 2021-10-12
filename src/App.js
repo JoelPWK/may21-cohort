@@ -1,14 +1,9 @@
 import SplashPage from './splashPage.js';
-import React from "react";
+import './App.css';
+import React, { useState, Component, useEffect } from 'react';
+import RouterPage from "./router";
 import './style.scss';
-import Home from "./home.js"
-import Nav from "./nav.js"
-import Login from "./login.js"
-import Register from "./register.js"
-import Search from "./search.js"
-import Profile from "./profile.js"
-import Report from "./report.js"
-import {HashRouter as Router, Switch, Route, Link} from "react-router-dom"
+import Login from "./login.js";
 
 class App extends React.Component {
   constructor(props){
@@ -24,26 +19,26 @@ class App extends React.Component {
     })
   }
 
-  splashTimer(){
+  handleChange = (data) => {
+    console.log(data);
+      this.setState({
+        isHidden: data
+      })
+  }
 
+  splashTimer(){
+    if (Login.isLoggedIn == false){
+      setTimeout(this.toggleHidden, 3000)
+    }
   }
   
   render(){
+    this.splashTimer();
     return(
-      <div className="App">
-    <Router>
-      <Switch>
-      <Nav />
-        <Route path="/home" >     <Home />      </Route>
-        <Route path="/login" >    <Login />     </Route>
-        <Route path="/register">  <Register/>   </Route>
-        <Route path="/search">    <Search />    </Route>
-        <Route path="/profile">   <Profile/>    </Route>
-        <Route path="/report">    <Report />    </Route>
-      </Switch>
-    </Router>  
-        { this.state.isHidden ? <SplashPage /> : null }
-        <button onClick={this.toggleHidden.bind(this)}>Hide/Show</button>
+      <div>
+        <div className="container">
+          { this.state.isHidden ? <SplashPage closeSplash={(e)=>{ this.handleChange(e) }}/> : <RouterPage/>}
+        </div>
       </div>
     )
   }
