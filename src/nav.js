@@ -18,9 +18,9 @@ class Nav extends React.Component {
         <div className="nav">
             <Link to="/">       <img className="nav_image" src={homeImage}      alt="Home"/>   </Link>
             <Link to="/search"> <img className="nav_image" src={searchImage}    alt="Search"/> </Link>
-            <Link to="/profile"><img className="nav_image" src={profileImage}   alt="Profile"/></Link>
             <Link to="/report"> <img className="nav_image" src={reportImage}    alt="Report"/> </Link>
-            <Link to="/login">      Login          </Link>
+            <Link to="/profile"><img className="nav_image" src={profileImage}   alt="Profile"/></Link>
+            <Link to="/login">      Login          </Link><p> | </p>
             <Link to="/register">   Register       </Link>
         </div>
         )

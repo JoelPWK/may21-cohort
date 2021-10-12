@@ -7,7 +7,12 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 
 export class Login extends Component {
-
+  constructor(props){
+    super(props)
+    this.state = {
+        isLoggedIn: false
+    }
+  }
   OnLogin(event) {
     event.preventDefault();
     //collect form inputs - email, password
@@ -15,7 +20,9 @@ export class Login extends Component {
     var password = event.target.password.value;
     console.log(email);
     console.log(password);
-
+    this.setState = {
+      isLoggedIn: true
+    }
     //check details with database
   }
 
