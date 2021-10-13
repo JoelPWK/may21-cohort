@@ -9,7 +9,10 @@ import { PasswordValidation } from "./PasswordValidation";
 
 export class Register extends Component {
 
-   OnSubmitRegister(event) {
+
+  OnSubmitRegister = async (event) => {
+    event.preventDefault();
+
     //collect form inputs - username, email, password
     var username = event.target.username.value;
     var email = event.target.email.value;
@@ -17,18 +20,26 @@ export class Register extends Component {
     var confirmationPassword = event.target.confirmPassword.value;
   
     //check password strength
+    //check password strength
     if (PasswordValidation(password) === false) {
-      alert("Password should be at least 8 characters using upper and lower case characters.")
+      alert(
+        "Password should be at least 8 characters using upper and lower case characters."
+      );
+
+      return;
     }
     //check username unique
 
     //check password matches confirmation password
     if (password !== confirmationPassword) {
-      alert("These passwords do not match!")
+      alert("These passwords do not match!");
+
+      return;
     }
   
     //send registration to backend
-  }
+
+  };
 
   render(){
     return (

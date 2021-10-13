@@ -16,7 +16,7 @@ class Search extends React.Component {
         this.state = {
             displayHour: "Hour",
             displayMinute: "Minute"
-        // For some reason, this doesn't work. 
+        // For some reason, this doesn't work.
         }
     }
     
@@ -40,29 +40,29 @@ class Search extends React.Component {
                     </FloatingLabel>
                 </Col><br/><br/><br/>
                 </Row>
-                    <DropdownButton 
-                        className="d-inline" 
+                    <DropdownButton
+                        className="d-inline"
                         title={this.state.displayHour ? this.state.displayHour : "Hour"}
                         onSelect={(e) => {
                                 this.setState({
                                     displayHour: e
                                 })
                             }}>
-                        
+
                         {["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"].map(
                             (hour) => {
                                 return (
-                                    <Dropdown.Item 
-                                        className="d-flex" 
-                                        eventKey={hour}> 
-                                        {hour} 
+                                    <Dropdown.Item
+                                        className="d-flex"
+                                        eventKey={hour}>
+                                        {hour}
                                     </Dropdown.Item>
                                 )
                             }
                         )}
-                    </DropdownButton>   
-                    <DropdownButton 
-                        className="d-inline" 
+                    </DropdownButton>
+                    <DropdownButton
+                        className="d-inline"
                         title={this.state.displayMinute ? this.state.displayMinute : "Minute"}
                         onSelect={(e) => {
                             this.setState({
@@ -72,9 +72,9 @@ class Search extends React.Component {
                         {["00","05","10","15","20","25","30","35","40","45","50","55"].map(
                             (minute) => {
                                 return (
-                                    <Dropdown.Item 
-                                        className="d-flex" 
-                                        eventKey={minute} > 
+                                    <Dropdown.Item
+                                        className="d-flex"
+                                        eventKey={minute} >
                                             {minute}
                                     </Dropdown.Item>
                                 )
@@ -82,7 +82,7 @@ class Search extends React.Component {
                         )}
                     </DropdownButton>
                 <Col>
-                
+
                 </Col>
                 <Form.Group className="mb-3" controlId="formBasicCheckbox">
                     <Form.Check type="checkbox"  label="Buses" />
@@ -94,7 +94,7 @@ class Search extends React.Component {
                 <Button variant="primary" type="submit">Search</Button>
                 </Form>
                 </Card.Body>
-            </Card>        
+            </Card>
         </div>
         )
     }
