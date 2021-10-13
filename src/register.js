@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import Button from "react-bootstrap/Button";
@@ -6,9 +6,18 @@ import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { PasswordValidation } from "./PasswordValidation";
+//import dbClient from "./dbClient.js";
 
 export class Register extends Component {
+  // constructor(props) {
+  //   super(props);
+  //   this.dbClient = new dbClient();
+  //   this.createQuery =
+  //     "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+  // }
 
+  // dbClient = new dbClient();
+  // createQuery = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
 
   OnSubmitRegister = async (event) => {
     event.preventDefault();
@@ -18,8 +27,7 @@ export class Register extends Component {
     var email = event.target.email.value;
     var password = event.target.password.value;
     var confirmationPassword = event.target.confirmPassword.value;
-  
-    //check password strength
+
     //check password strength
     if (PasswordValidation(password) === false) {
       alert(
@@ -36,12 +44,24 @@ export class Register extends Component {
 
       return;
     }
-  
-    //send registration to backend
 
+    //send registration to backend
+    // this.dbClient.query(
+    //   this.createQuery,
+    //   [username, email, password],
+    //   function (err, result) {
+    //     console.log(err, result);
+    //
+    //     //send confirmation
+    //
+    //     //alert user to successfull registration
+    //
+    //     //return user to login page
+    //   }
+    // );
   };
 
-  render(){
+  render() {
     return (
       <Container className="Register">
         <div className="container-fluid h-100 d-flex justify-content-center align-items-center">
@@ -55,36 +75,50 @@ export class Register extends Component {
                 controlId="formBasicUsername"
               >
                 <Form.Label>Username:</Form.Label>
-                <Form.Control type="text" placeholder="Enter username" name="username" />
+                <Form.Control
+                  type="text"
+                  placeholder="Enter username"
+                  name="username"
+                />
               </Form.Group>
-  
+
               <Form.Group className="mb-3 ms-1 me-1" controlId="formBasicEmail">
                 <Form.Label>Email Address:</Form.Label>
-                <Form.Control type="email" placeholder="Enter email" name="email" />
+                <Form.Control
+                  type="email"
+                  placeholder="Enter email"
+                  name="email"
+                />
               </Form.Group>
-  
+
               <Form.Group
                 className="mb-3 ms-1 me-1"
                 controlId="formBasicPassword"
               >
                 <Form.Label>Password:</Form.Label>
-                <Form.Control type="password" placeholder="Password" name="password" />
+                <Form.Control
+                  type="password"
+                  placeholder="Password"
+                  name="password"
+                />
               </Form.Group>
-  
+
               <Form.Group
                 className="mb-3 ms-1 me-1"
                 controlId="formBasicConfirmPassword"
               >
                 <Form.Label>Confirm Password:</Form.Label>
-                <Form.Control type="password" placeholder="Confirm Password" name="confirmPassword" />
+                <Form.Control
+                  type="password"
+                  placeholder="Confirm Password"
+                  name="confirmPassword"
+                />
               </Form.Group>
               <div className="text-center">
                 <Button
                   id="submitButton"
                   type="submit"
                   className="text-center mb-3"
-                  
-                  
                 >
                   Register
                 </Button>
