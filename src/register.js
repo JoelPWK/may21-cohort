@@ -7,14 +7,13 @@ import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
 import { PasswordValidation } from "./PasswordValidation";
 //import dbClient from "./dbClient.js";
+import apiClient from "./apiClient";
 
 export class Register extends Component {
-  // constructor(props) {
-  //   super(props);
-  //   this.dbClient = new dbClient();
-  //   this.createQuery =
-  //     "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-  // }
+  constructor(props) {
+    super(props);
+    this.ApiClient = new apiClient();
+  }
 
   // dbClient = new dbClient();
   // createQuery = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
@@ -45,20 +44,14 @@ export class Register extends Component {
       return;
     }
 
-    //send registration to backend
-    // this.dbClient.query(
-    //   this.createQuery,
-    //   [username, email, password],
-    //   function (err, result) {
-    //     console.log(err, result);
-    //
-    //     //send confirmation
-    //
-    //     //alert user to successfull registration
-    //
-    //     //return user to login page
-    //   }
-    // );
+    //Send data to database
+    this.ApiClient.query('INSERT into users (name, email, password) VALUES (?,?,?)', [username, email, password]).then((res)=>{
+      console.log(res.data);
+
+      //after registering show success message
+
+      //redirect user to login page
+    })
   };
 
   render() {
