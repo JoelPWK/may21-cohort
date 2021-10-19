@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import App from "./App.js"
-import Nav from "./nav.js"
+import OurNavbar from "./nav.js"
 import Home from "./home.js"
 import Login from "./login.js"
 import Register from "./register.js"
@@ -15,7 +15,7 @@ class RouterPage extends Component {
         return(
           <div>
             <Router>
-                <Nav />
+                <OurNavbar />
                 <Switch>
                     <Route exact path="/" component={Home}>Home</Route>
                     <Route path="/login" >    <Login />     </Route>
