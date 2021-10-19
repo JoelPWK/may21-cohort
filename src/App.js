@@ -4,6 +4,7 @@ import React, { useState, Component, useEffect } from 'react';
 import RouterPage from "./router";
 import './style.scss';
 import Login from "./login.js";
+import { connect } from "react-redux";
 
 class App extends React.Component {
   constructor(props){
@@ -37,10 +38,16 @@ class App extends React.Component {
     return(
       <div>
         <div className="container">
-          { this.state.isHidden ? <SplashPage closeSplash={(e)=>{ this.handleChange(e) }}/> : <RouterPage/>}
+          { this.props.isHidden ? <SplashPage closeSplash={(e)=>{ this.handleChange(e) }}/> : <RouterPage/>}
         </div>
       </div>
     )
   }
 }
-export default App;
+export default connect((state)=>{
+  //Set props data
+  return {
+    status: state.loggedIn,
+    isHidden: state.isHidden, //update to pull data from store
+  };
+})(App);

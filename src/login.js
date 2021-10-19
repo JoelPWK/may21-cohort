@@ -5,26 +5,37 @@ import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import { connect } from "react-redux";
+import { setLoggedInStatus, LoggedInOptions } from "./redux/actions";
 
 export class Login extends Component {
   constructor(props){
     super(props)
-    this.state = {
-        isLoggedIn: false
-    }
+    // this.state = {
+    //     isLoggedIn: false
+    // }
   }
-  OnLogin(event) {
+
+  OnLogin = (event) => {
     event.preventDefault();
     //collect form inputs - email, password
     var email = event.target.email.value;
     var password = event.target.password.value;
     console.log(email);
     console.log(password);
-    this.setState = {
-      isLoggedIn: true
-    }
+
     //check details with database
-  }
+
+    //Set logged in state in redux
+    // this.setState = {
+    //   isLoggedIn: true
+    // }
+
+    //Send value to store
+    this.props.dispatch(setLoggedInStatus(LoggedInOptions.LOGGED_IN));
+
+    console.log('status', this.props.status);
+  };
 
   render(){
     return (
@@ -64,4 +75,9 @@ export class Login extends Component {
   }
 }
 
-export default Login;
+//Connect component to redux and map state to props
+export default connect((state)=>{
+  return {
+    status: state.loggedIn,
+  };
+})(Login);
