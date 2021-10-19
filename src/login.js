@@ -32,7 +32,8 @@ export class Login extends Component {
     // }
 
     //Send value to store
-    this.props.dispatch(setLoggedInStatus(LoggedInOptions.LOGGED_IN));
+    this.props.dispatch(setLoggedInStatus(LoggedInOptions.LOGGED_OUT));
+    this.props.storeLoggedInStatus(LoggedInOptions.LOGGED_OUT);
 
     console.log('status', this.props.status);
   };
@@ -77,7 +78,15 @@ export class Login extends Component {
 
 //Connect component to redux and map state to props
 export default connect((state)=>{
+  //Set props data
   return {
     status: state.loggedIn,
   };
+}, (dispatch)=>{
+  //Map dispatch actions to props
+  return {
+    storeLoggedInStatus: (value)=>{
+      dispatch(setLoggedInStatus(value));
+    }
+  }
 })(Login);
