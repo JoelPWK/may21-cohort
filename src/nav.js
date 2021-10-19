@@ -1,12 +1,15 @@
 import React from "react";
 import {Link} from "react-router-dom";
+import * as Icon from 'react-bootstrap-icons';
+import { IconContext } from "react-icons";
+import 'bootstrap/dist/css/bootstrap.min.css';
 import "./style.scss";
-import homeImage from "./images/home.png";
-import searchImage from "./images/search.png";
-import profileImage from "./images/profile.png";
-import reportImage from "./images/report.png";
+import Navbar from "react-bootstrap/Navbar";
+import Nav from "react-bootstrap/Nav";
+import Container from "react-bootstrap/Container";
+import logoImage from "./images/SSGLogo.png";
 
-class Nav extends React.Component {
+class OurNavbar extends React.Component {
     constructor(props){
         super(props)
     this.state = {
@@ -15,16 +18,35 @@ class Nav extends React.Component {
 }
     render(){
         return(
-        <div className="nav">
-            <Link to="/">       <img className="nav_image" src={homeImage}      alt="Home"/>   </Link>
-            <Link to="/search"> <img className="nav_image" src={searchImage}    alt="Search"/> </Link>
-            <Link to="/report"> <img className="nav_image" src={reportImage}    alt="Report"/> </Link>
-            <Link to="/profile"><img className="nav_image" src={profileImage}   alt="Profile"/></Link>
-            <Link to="/login">      Login          </Link><p> | </p>
-            <Link to="/register">   Register       </Link>
-        </div>
+            <Navbar expand="lg" className="nav">
+                <Container>
+                    <Navbar.Brand href="#home"><img 
+                        alt=""
+                        src={logoImage}
+                        width="30"
+                        height="30"
+                        className="d-inline-block align-top" 
+                    />{' '}</Navbar.Brand>
+                    <Navbar.Toggle aria-controls="basic-navbar-nav" id="custom-toggler" />
+                    <Navbar.Collapse id="basic-navbar-nav">
+                        <Nav className="me-auto">
+                            <IconContext.Provider value={{ className: "nav-bar-icons"}}>
+                                <Link to="/" id="homeLink">       <Icon.HouseDoor id="homeIcon"/>   </Link>
+                                <Link to="/search" id="searchLink"> <Icon.Search  id="searchIcon"/> </Link>
+                                <Link to="/report" id="reportLink"> <Icon.ClipboardPlus id="reportIcon"/> </Link>
+                                <Link to="/profile" id="profileLink"><Icon.PersonCircle  id="profileIcon"/></Link>
+                            </IconContext.Provider>
+                        </Nav>
+                        <Nav>
+                            <Link to="/login" id="loginLink">      Login          </Link>
+                            <Link to="/register" id="registerLink">   Register       </Link>
+                        </Nav>
+                    </Navbar.Collapse>
+                </Container>
+            </Navbar>
+        
         )
     }
 }
 
-export default Nav;
+export default OurNavbar;
