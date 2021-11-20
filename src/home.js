@@ -1,4 +1,6 @@
 import React from "react";
+import Dashboard from "./dashboard.js";
+
 class Home extends React.Component {
     constructor(props){
         super(props)
@@ -10,7 +12,7 @@ class Home extends React.Component {
     render(){
         return(
         <div> 
-            <p>Home Page or something amirite</p>
+            <Dashboard />
         </div>
         )
     }
