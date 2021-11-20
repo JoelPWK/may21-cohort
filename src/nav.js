@@ -18,7 +18,7 @@ class OurNavbar extends React.Component {
 }
     render(){
         return(
-            <Navbar expand="lg" className="nav">
+            <Navbar expand="md" className="nav">
                 <Container>
                     <Navbar.Brand href="#home"><img 
                         alt=""
