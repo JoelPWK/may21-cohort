@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import "./App.css";
+import "./style.scss";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
 import Container from "react-bootstrap/Container";
 import Card from "react-bootstrap/Card";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import { PasswordValidation } from "./PasswordValidation";
 //import dbClient from "./dbClient.js";
 import apiClient from "./apiClient";
@@ -56,8 +58,10 @@ export class Register extends Component {
 
   render() {
     return (
-      <Container className="Register">
-        <div className="container-fluid h-100 d-flex justify-content-center align-items-center">
+      <Container>
+        <Row>
+          <Col sm={1}></Col>
+          <Col sm={10}>
           <Card id="registerCard">
             <Card.Title className="mt-3 mb-3 ms-1 me-1">
               Enter your registration details below:
@@ -118,7 +122,9 @@ export class Register extends Component {
               </div>
             </Form>
           </Card>
-        </div>
+          </Col>
+          <Col sm={1}></Col>
+        </Row>
       </Container>
     );
   }
