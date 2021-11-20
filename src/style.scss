@@ -1,69 +1,108 @@
-@import './colourVariables';
+@import "./colourVariables";
 
+.wholePage {
+  height: 100vh;
+  background-color: $cyberGeorge;
+}
 
-#homeLink, #searchLink, #reportLink, #profileLink{
+.search {
+  width: 80vw;
+}
+
+#homeLink,
+#searchLink,
+#reportLink,
+#profileLink {
   color: $bone;
   padding: 0.5em;
 }
 
-#loginLink, #registerLink {
+#loginLink,
+#registerLink {
   color: $bone;
   font-size: 30px;
   text-decoration: none;
   padding: 0.2em;
 }
 
-#homeIcon, #searchIcon, #reportIcon, #profileIcon {
-   width: 30px;
-   height: 30px;
+#homeIcon,
+#searchIcon,
+#reportIcon,
+#profileIcon {
+  width: 30px;
+  height: 30px;
 }
 
 #custom-toggler {
   background-color: $bone;
-    
 }
 
-
-.Login,
-.Register,
-.Dashboard {
-  height: 100vh;
-  background-color: $cyberGeorge;
-}
-
-#registerCard, #loginCard, #dashboardOptions {
+#registerCard,
+#loginCard,
+#dashboardOptions,
+#journeySearch {
   background-color: $champagnePink;
+  
 }
 
-#submitButton, #loginButton, #myJourneysButton, #makeAReportButton {
+#submitButton,
+#loginButton,
+#myJourneysButton,
+#makeAReportButton,
+#hourButton,
+#minuteButton,
+#searchButton {
   background-color: $amazon;
   border-color: $amazon;
 }
 
 body {
-    background-color: $bone;
+  background-color: $bone;
 }
 
 h1 {
-    font-size: 20px;
+  font-size: 20px;
 }
 .main-text {
-    font-size: 16px;
-    color: $spaceCadet;
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: justify;
-    line-height: 24px;
-    background: $bone;
-}
-
-.container {
-
+  font-size: 16px;
+  color: $spaceCadet;
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+  text-align: justify;
+  line-height: 24px;
+  background: $bone;
 }
 
 .nav {
-    background: $spaceCadet;
-    list-style: none;
-    align-content: initial;
+  background: $spaceCadet;
+  list-style: none;
+  align-content: initial;
 }
 
+.containerSplash {
+  background-color: $spaceCadet;
+  height: 100vh;
+  width: 100vw;
+}
 
+.inner {
+  padding: 100px;
+}
+.cover-heading {
+  color: #d0ceba;
+  text-align: center;
+}
+.p1 {
+  text-align: center;
+  color: #d0ceba;
+}
+.p2 {
+  color: #d0ceba;
+  text-align: center;
+}
+.cover {
+  padding: 0 20px;
+}
+.cover .btn-lg {
+  padding: 10px 20px;
+  font-weight: bold;
+}
